@@ -17,7 +17,7 @@
 
 ![布隆过滤器示意图](https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-11/布隆过滤器-bit数组.png)
 
-位数组中的每个元素都只占用 1 bit ，并且每个元素只能是 0 或者 1。这样申请一个 100w 个元素的位数组只占用  1000000 / 8 = 125000 B = 15625 byte ≈ 15.3kb 的空间。
+位数组中的每个元素都只占用 1 bit ，并且每个元素只能是 0 或者 1。这样申请一个 100w 个元素的位数组只占用  1000000Bit / 8 = 125000 Byte = 125000/1024 kb ≈ 122kb 的空间。
 
 总结：**一个名叫 Bloom 的人提出了一种来检索元素是否在给定大集合中的数据结构，这种数据结构是高效且性能很好的，但缺点是具有一定的错误识别率和删除难度。并且，理论情况下，添加到集合中的元素越多，误报的可能性就越大。**
 
@@ -232,9 +232,9 @@ true
 
 #### 6.1介绍
 
-Redis v4.0 之后有了 Module（模块/插件） 功能，Redis Modules 让 Redis 可以使用外部模块扩展其功能 。布隆过滤器就是其中的 Module。详情可以查看 Redis 官方对 Redis Modules 的介绍 ：https://redis.io/modules。
+Redis v4.0 之后有了 Module（模块/插件） 功能，Redis Modules 让 Redis 可以使用外部模块扩展其功能 。布隆过滤器就是其中的 Module。详情可以查看 Redis 官方对 Redis Modules 的介绍 ：https://redis.io/modules
 
-另外，官网推荐了一个 RedisBloom  作为 Redis 布隆过滤器的 Module,地址：https://github.com/RedisBloom/RedisBloom。其他还有：
+另外，官网推荐了一个 RedisBloom  作为 Redis 布隆过滤器的 Module,地址：https://github.com/RedisBloom/RedisBloom. 其他还有：
 
 - redis-lua-scaling-bloom-filter （lua 脚本实现）：https://github.com/erikdubbelboer/redis-lua-scaling-bloom-filter
 - pyreBloom（Python中的快速Redis 布隆过滤器） ：https://github.com/seomoz/pyreBloom
